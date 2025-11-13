@@ -1,0 +1,39 @@
+@import 'remixicon/fonts/remixicon.css';
+@import "tailwindcss";
+
+@theme  {
+   /* light theme */
+   --color-background: #f9f9fb;
+   --color-text: #1c1c1c;
+   --color-accent: #a68cf5;
+   --color-accentHover : #9A83F9;
+   --color--softgold: #F4E9D8;
+   --border--border: #e4e4e4;
+
+   /* dark theme */
+   --color--darkBg: #0F0F11;
+   --color-darkText: #EDEDED;
+
+   /* Font Families */
+   --font-heading : 'Playfair Display',serif;
+   --font-body : 'Inter', sans-serif;
+
+   /*Box shadows */
+   --shadow-subtle: 0 2px 8px rgba(0,0,0,0.05);
+   --shadow-soft-glow: 0 20px rgba(166,140,254,0.3);
+}
+
+@layer base {
+   body {
+      background-color: var(--color-background);
+      color: var(--color-text);
+      font-family: var(--font-body);
+   }
+
+   .dark{
+      body{
+         background-color: var(--color--darkBg);
+         color: var(--color--darkText);
+      }
+   }
+}
