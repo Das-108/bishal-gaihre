@@ -1,22 +1,49 @@
-import React from 'react'
+import React from "react";
 
 const Hero = () => {
   return (
-    <div className='flex w-full h-[90vh] items-center bg-black'>
-        <div className='bg-red-400 w-1/2 h-full'>
-            <p>Hi,I'm Bishal Gaihre 🌿</p>
-            <h2>Full Stack Developer</h2>
-            <p>"I bulid expriences rooted in clarity and purpose."</p>
-            <div className='gap-8 mt-6'>
-                <button className='bg-amber-500 p-4 rounded-xl text-white ml-4'>View My Work</button>
-                <button className='bg-amber-500 p-4 rounded-xl text-white ml-4'>Contact Me</button>
-            </div>
-        </div>
-        <div className='bg-blue-500 w-1/2 h-full py-50 px-50'>
-            <img className='h-100 w-100 rounded-full ' src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-        </div>
-    </div>
-  )
-}
+    <div className="flex w-full h-[90vh] items-center mt-6 p-2">
+      
+      <div className="w-1/2 p-8 space-y-4">
+        
+        <p className="text- text-accent font-body mb-2">
+          Hi, I'm Bishal Gaihre 🌿
+        </p>
 
-export default Hero
+        <h1 className="font-heading text-6xl tracking-tight leading-[1.1]">
+          UI/UX Designer & <br />
+          <span className="font-medium text-accent">
+            Full-Stack <br /> Developer
+          </span>
+        </h1>
+
+        <p className="italic text-textC">
+          “I build experiences rooted in clarity and purpose.”
+        </p>
+
+        {/* BUTTONS */}
+        <div className="flex gap-4 pt-2">
+          <button className="bg-amber-500 px-6 py-3 rounded-xl text-white">
+            View My Work
+          </button>
+
+          <button className="bg-amber-500 px-6 py-3 rounded-xl text-white">
+            Contact Me
+          </button>
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="w-1/2 px-8 flex justify-center">
+        <img
+          className="h-70 w-70 rounded-full object-cover border-3"
+          src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?q=80&w=1740&auto=format&fit=crop"
+          alt=""
+        />
+      </div>
+
+    </div>
+  );
+};
+
+export default Hero;
