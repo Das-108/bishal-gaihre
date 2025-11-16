@@ -6,24 +6,18 @@
 
 @theme  {
    /* light theme */
-   --color-background: #f9f9fb;
-   --color-textC: #222222;
-   --color-accent: #a68cf5;
-   --color-accentHover : #9A83F9;
-   --color--softgold: #F4E9D8;
-   --border--border: #e4e4e4;
+  --bg-primary: #fafafa;      
+   --bg-secondary: #f5f1d7;    
+   --text-default: #0D0D0D;    
+   --color-accent: #9B87F5;
+   --color-border: #E4E4E4;
 
-   /* dark theme */
-   --color--darkBg: #0F0F11;
-   --color-darkText: #EDEDED;
-
-   /* Font Families */
-   --font-heading : 'Playfair Display',serif;
-   --font-body : 'Inter', sans-serif;
-
-   /*Box shadows */
-   --shadow-subtle: 0 2px 8px rgba(0,0,0,0.05);
-   --shadow-soft-glow: 0 20px rgba(166,140,254,0.3);
+   /*Dark theme */
+   --dark-bg-primary: #0D0D0D;
+   --dark-bg-secondary: #2A2A2A;
+   --dark-text-default: #EAEAEA;
+   --dark-color-accent: #A893F9;
+   --dark-color-border-dark: #2A2A2A;
 }
 
 @layer base {
@@ -34,7 +28,9 @@
    }
 
    .dark{
-      background-color: var(--color--darkBg);
-      color: var(--color--darkText);
+      --bg-primary: var(--dark-bg-primary); 
+      --text-default: var(--dark-text-default);
+      --bg-secondary: var(--dark-bg-secondary);
+      --color-accent: var(--dark-color-accent);
    }
 }

@@ -5,6 +5,7 @@ import AboutMe from './Componets/AboutMe'
 import Skills from './Componets/Skills'
 import Certificates from './Componets/Certificates'
 import LetsConnect from './Componets/LetsConnect'
+import Footer from './Componets/Footer'
 
 
 
@@ -37,7 +38,8 @@ const App = () => {
           <Skills  />
           <Certificates />
           <LetsConnect />
-        </main>      
+        </main>
+      <Footer />      
     </div>
   )
 }

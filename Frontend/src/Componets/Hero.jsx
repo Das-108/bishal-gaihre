@@ -1,48 +1,73 @@
-import React from "react";
+import React from 'react';
+import { RiArrowRightLine } from 'react-icons/ri'; // Example icon for button
 
 const Hero = () => {
   return (
-    <div className="flex w-full items-center mt-12 mb-4 h-[90vh]">
-      
-      <div className="w-full lg:w-1/2 p-4 space-y-6">
-        
-        <p className="text-xl text-accent font-body">
-          Hi, I'm Bishal Gaihre 🌿
-        </p>
+    <section id="hero" className='h-[800px] pt-24 flex items-center'>
+      <div className='max-w-6xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center'>
+        {/* Left Content */}
+        <div className='space-y-8'>
+          <div className='space-y-4'>
+            <p 
+              className='text-xl font-medium'
+              style={{ color: 'var(--color-accent)' }} // Accent color
+            >
+              Hi, I'm Bishal Gaihre 🌿
+            </p>
+            <h1 
+              className='font-heading text-5xl lg:text-6xl font-semibold leading-tight'
+              style={{ color: 'var(--text-default)' }} // Default text color
+            >
+              UI/UX Designer &amp;<br />
+              <span style={{ color: 'var(--color-accent)' }}>Full Stack Developer</span>
+            </h1>
+            <p className='text-xl italic text-gray-500'>
+              "I build experiences rooted in clarity and purpose."
+            </p>
+          </div>
+          <div className='flex gap-6'>
+            {/* Outline Button */}
+            <button 
+              className='px-8 py-4 border-2 rounded-xl transition-all duration-300 hover:glow'
+              style={{ 
+                borderColor: 'var(--color-accent)', 
+                color: 'var(--color-accent)',
+                backgroundColor: 'transparent'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-accent)'; e.currentTarget.style.color = 'var(--bg-primary)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--color-accent)'; }}
+            >
+              View My Work
+            </button>
+            {/* Filled Button */}
+            <button 
+              className='px-8 py-4 rounded-xl hover:shadow-lg hover:glow transition-all duration-300 flex items-center gap-2'
+              style={{ 
+                backgroundColor: 'var(--color-accent)', 
+                color: 'var(--bg-primary)' // Text color should contrast with accent
+              }}
+            >
+              Contact Me <RiArrowRightLine />
+            </button>
+          </div>
+        </div>
 
-        <h1 className="font-heading text-6xl lg:text-7xl tracking-tight leading-[1.1]">
-          UI/UX Designer & <br />
-          <span className="font-semibold text-accent">
-            Full-Stack <br /> Developer
-          </span>
-        </h1>
-
-        <p className="italic text-lg text-textC">
-          “I build experiences rooted in clarity and purpose.”
-        </p>
-
-        {/* BUTTONS */}
-        <div className="flex gap-4 pt-2">
-          <button className="bg-transparent border-2 px-8 py-3 rounded-xl text-accent font-medium shadow hover:bg-accent hover:text-white transition-colors">
-            View My Work
-          </button>
-
-          <button className="bg-accent  px-8 py-3 rounded-xl text-white font-medium hover:shadow-2xl">
-            Contact Me
-          </button>
+        {/* Right Image + Particles - Note: Particle CSS needed in index.css */}
+        <div className='relative flex justify-center'>
+          {/* Particles omitted for brevity but should remain in HTML/CSS */}
+          <div className='w-80 h-80 rounded-full overflow-hidden border-4 shadow-2xl'
+            // Using a secondary color for the border
+            style={{ borderColor: 'var(--bg-secondary)', boxShadow: '0 0 40px rgba(var(--color-accent-rgb, 155, 135, 245), 0.3)' }}
+          >
+            <img 
+              className='w-full h-full object-cover' 
+              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3317ae77af-af24e45f8449b552a915.png" 
+              alt="Bishal Gaihre Portrait"
+            />
+          </div>
         </div>
       </div>
-
-      {/* RIGHT */}
-      <div className="hidden lg:flex w-1/2 justify-center">
-        <img
-          className="h-70 w-70 rounded-full object-cover border-3"
-          src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?q=80&w=1740&auto=format&fit=crop"
-          alt=""
-        />
-      </div>
-
-    </div>
+    </section>
   );
 };
 

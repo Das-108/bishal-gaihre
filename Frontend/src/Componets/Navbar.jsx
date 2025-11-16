@@ -1,31 +1,45 @@
-import React from 'react'
+import React from 'react';
+import { RiSunFill, RiMoonFill } from 'react-icons/ri'; 
 
-const Navbar = ({ toggleDarkMode, isdarkMode }) => {
-  console.log("Darkmode status: " , isdarkMode)
+// Note: Ensure your parent component passes toggleDarkMode and isDarkMode
+const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   return (
-    <nav className='bg-background sticky justify-center top-0 -mx-4 lg:-mx-12'>  
-      <hr />  
-      <div className='max-w-7xl mx-auto flex justify-between items-center py-6'>
-          <h2 className='font-heading text-2xl font-semibold text-textC dark:text-darkText dark:bg-black'>Bishal Gaihre</h2>
-          <div className='hidden md:flex gap-8 text-lg font-body text-textC'>
-            <a className='hover:text-accent transition-colors' href="">Home</a>
-            <a className='hover:text-accent transition-colors' href="">Cerificates</a>
-            <a className='hover:text-accent transition-colors' href="">Contact</a>
-            <a className='hover:text-accent transition-colors' href="">About Me</a>            
-          </div>
+    <header 
+      // Use CSS variable for background and border colors
+      className='fixed top-0 w-full z-50 bg-(--bg-primary)/80 backdrop-blur-md border-b border-border transition-colors duration-300'
+    >
+      <div className='max-w-6xl mx-auto px-8 py-4 flex justify-between items-center'>
+        <div 
+          className='font-heading text-2xl font-semibold'
+          style={{ color: 'var(--text-default)' }} // Ensure heading uses default text color
+        >
+          Bishal Gaihre
+        </div>
 
-          <button
-            onClick={toggleDarkMode}
-           className='text-2xl text-textC hover:text:accent transition-colors'
-            aria-label='Toggle dark mode'            
-          >
-            {/* 🌙 Updated Icon Logic ☀️ */}
-            <i className={isdarkMode ? "ri-sun-fill" : "ri-moon-fill" }></i>
-          </button>
+        <nav className='hidden md:flex space-x-8 text-(--text-default)'>
+          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+            <a 
+              key={item}
+              href={`#${item.toLowerCase()}`} 
+              // Use the accent color variable for hover state
+              className='hover:text-accent transition-colors'
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
+
+        {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleDarkMode}
+          className='text-2xl text-(--text-default) hover:text-accent transition-colors'
+          aria-label='Toggle dark mode'
+        >
+          {isDarkMode ? <RiSunFill /> : <RiMoonFill />}
+        </button>
       </div>
-      <hr />      
-    </nav>
-  )
-}
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
