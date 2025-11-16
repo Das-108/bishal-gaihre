@@ -34,9 +34,7 @@
    }
 
    .dark{
-      body{
-         background-color: var(--color--darkBg);
-         color: var(--color--darkText);
-      }
+      background-color: var(--color--darkBg);
+      color: var(--color--darkText);
    }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Navbar = ({ toggleDarkMode, isDarkMode }) => {
+const Navbar = ({ toggleDarkMode, isdarkMode }) => {
+  console.log("Darkmode status: " , isdarkMode)
   return (
     <nav className='bg-background sticky justify-center top-0 -mx-4 lg:-mx-12'>  
       <hr />  
@@ -19,7 +20,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
             aria-label='Toggle dark mode'            
           >
             {/* 🌙 Updated Icon Logic ☀️ */}
-            <i className={isDarkMode ? "ri-sun-fill" : "ri-moon-fill" }></i>
+            <i className={isdarkMode ? "ri-sun-fill" : "ri-moon-fill" }></i>
           </button>
       </div>
       <hr />      

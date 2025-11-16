@@ -29,15 +29,15 @@ const App = () => {
 
 
   return (
-    <div className='min-h-screen px-4 lg:px-12 '>      
+    <div className={`${isdarkMode ? "dark" : ""} min-h-screen px-4 lg:px-12`}>
       <Navbar toggleDarkMode={toggleDarkMode} isdarkMode= {isdarkMode} />
-      <main>
-        <Hero />
-        <AboutMe  />
-        <Skills  />
-        <Certificates />
-        <LetsConnect />
-      </main>      
+        <main>
+          <Hero />
+          <AboutMe  />
+          <Skills  />
+          <Certificates />
+          <LetsConnect />
+        </main>      
     </div>
   )
 }
