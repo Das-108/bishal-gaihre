@@ -1,10 +1,13 @@
 @import 'remixicon/fonts/remixicon.css';
 @import "tailwindcss";
 
+
+
+
 @theme  {
    /* light theme */
    --color-background: #f9f9fb;
-   --color-textC: #1c1c1c;
+   --color-textC: #222222;
    --color-accent: #a68cf5;
    --color-accentHover : #9A83F9;
    --color--softgold: #F4E9D8;

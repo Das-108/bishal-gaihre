@@ -17,14 +17,19 @@ const certification = [
     title: 'Javasxript Algorithms and Data structures',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugit, voluptates corrupti placeat incidunt rem dolorum omnis ut dolore laudantium, voluptas, minima quaerat harum delectus maxime doloremque reiciendis nihil. Sequi'
   },
+  {
+    cetificateImg: 'https://global.discourse-cdn.com/freecodecamp/optimized/3X/1/a/1a10b3336896b7939a35c42b4d18de70205f81ef_2_1024x669.png',
+    title: 'Javasxript Algorithms and Data structures',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugit, voluptates corrupti placeat incidunt rem dolorum omnis ut dolore laudantium, voluptas, minima quaerat harum delectus maxime doloremque reiciendis nihil. Sequi'
+  },
 
 ]
 
 const Certificates = (props) => {
   return (
-    <section className=' max-w-full mx-auto'>
+    <section className='-mx-4 lg:-mx-12'>
      
-        <div className='text-center mb-12'>
+        <div className='text-center mb-1 p-4'>
             <h2 className='font-heading text-4xl lg:text-5xl text-textC '> Certificates</h2>
             <p className='font-body text-lg text-textC/70'>Recent work that showcase my approach</p>
         </div>

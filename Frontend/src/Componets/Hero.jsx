@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="flex w-full items-center">
+    <div className="flex w-full items-center mt-12 mb-4 h-[90vh]">
       
       <div className="w-full lg:w-1/2 p-4 space-y-6">
         
@@ -27,7 +27,7 @@ const Hero = () => {
             View My Work
           </button>
 
-          <button className="bg-accent  px-8 py-3 rounded-xl text-white font-medium hover:bg-white hover:text-accent">
+          <button className="bg-accent  px-8 py-3 rounded-xl text-white font-medium hover:shadow-2xl">
             Contact Me
           </button>
         </div>

@@ -23,33 +23,40 @@ const skillsData = [
     },
 ]
 
-const Skills = () => {
+const Skills = ({ className }) => { 
   return (
-    <section className='flex flex-col items-center p-4'>
+    <section className={`flex flex-col items-center max-w-7xl  mx-auto ${className}`}>
 
-        <div className='mt-6 text-center'>
+        <div className='mt-2 text-center p-2'>
             <h2 className='font-heading text-4xl tracking-tight lg:text-5xl'>Skills & Expertise</h2>
-            <p className='font-body text-textC/70 mt-2 text-lg'>Tooks and technology I work with</p>        
+            <p className='font-body text-textC/70 mt-2  mb-4 text-lg'>Tools and technology I work with</p>        
         </div>
 
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl p-4'>
 
-            {
-                skillsData.map((elem,index) => {
+            {skillsData.map((elem, index) => (
 
-                    return (
-                        <div key={index} className='Card bg-blue-200 rounded-xl p-6 flex flex-col items-center text-center shadow hover:sha'>
-                            <div className='bg-background mb-2 rounded-2xl w-28 h-28 flex items-center justify-center text-2xl text-accent'>
-                                <i class={elem.logo}></i>
-                            </div>
-                            <h3 className='mb-1 font-bold text-lg font-body'>{elem.title}</h3>
-                            <p className='text-sm text-textC/80'>{elem.tools}</p>
-                        </div> 
-                    )
-                })
-            }
-                       
-            
+                <div 
+                    key={index} 
+                    className='bg-background rounded-xl p-6 flex flex-col items-center text-center shadow-subtle transition-all duration-300 ease-in-out 
+                                group 
+                                hover:shadow-xl hover:-translate-y-1'
+                >
+                    
+                    <div 
+                        className='bg-accent/20 mb-4 rounded-xl w-24 h-24 flex items-center justify-center text-3xl transition-colors duration-300
+                                   group-hover:bg-accent'
+                    >
+                        <i 
+                            className={`${elem.logo} text-accent transition-colors duration-300 
+                                        group-hover:text-white`} // Default color is accent, changes to white on group-hover
+                        ></i>
+                    </div>
+
+                    <h3 className='mb-1 font-bold text-lg font-body text-textC'>{elem.title}</h3>
+                    <p className='text-sm text-textC/80'>{elem.tools}</p>
+                </div> 
+            ))}
         </div>
     </section>
   )
