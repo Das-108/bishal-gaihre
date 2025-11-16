@@ -1,5 +1,28 @@
 import React from 'react'
 
+const skillsData = [
+    {
+        logo: 'ri-palette-line text-6xl',
+        title: 'Design',
+        tools: 'Figma, Framer, Adobe XD'
+    },
+    {
+        logo: 'ri-reactjs-fill text-6xl',
+        title: 'Frontend',
+        tools: 'React, Tailwind, Vite'
+    },
+    {
+        logo: 'ri-server-line text-6xl',
+        title: 'Backend',
+        tools: 'Node, Express, MongoDB'
+    },
+    {
+        logo: 'ri-tools-fill text-6xl',
+        title: 'Tools',
+        tools: 'Git, REST API, UI Libraries'
+    },
+]
+
 const Skills = () => {
   return (
     <section className='flex flex-col items-center p-4'>
@@ -11,15 +34,21 @@ const Skills = () => {
 
         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl'>
 
-            {/* map here using funtion */}
+            {
+                skillsData.map((elem,index) => {
 
-            <div className='Card bg-blue-200 rounded-xl p-6 flex flex-col items-center text-center shadow hover:sha'>
-                <div className='bg-background mb-2 rounded-2xl w-28 h-28 flex items-center justify-center text-2xl text-accent'>
-                    <i class="ri-palette-line text-6xl"></i>
-                </div>
-                <h3 className='mb-1 font-bold text-lg font-body'>Design</h3>
-                <p className='text-sm text-textC/80'>Figma,canva</p>
-            </div>            
+                    return (
+                        <div key={index} className='Card bg-blue-200 rounded-xl p-6 flex flex-col items-center text-center shadow hover:sha'>
+                            <div className='bg-background mb-2 rounded-2xl w-28 h-28 flex items-center justify-center text-2xl text-accent'>
+                                <i class={elem.logo}></i>
+                            </div>
+                            <h3 className='mb-1 font-bold text-lg font-body'>{elem.title}</h3>
+                            <p className='text-sm text-textC/80'>{elem.tools}</p>
+                        </div> 
+                    )
+                })
+            }
+                       
             
         </div>
     </section>
