@@ -1,7 +1,74 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { RiMailFill } from 'react-icons/ri';
 
+
 const Contact = () => {
+
+
+    const Contact = () => {
+        const [formData, setFromData] = useState({
+            name: '',
+            email: '',
+            msessage: '',
+        })
+    }
+
+    const [status, setStatus] = useState(idle);
+    const [statusMessage, setStatusMessage] = useState('');
+
+    const handleChange = (e) => {
+        setFromData({
+            ...formData,
+            [e.target.name] : e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        setStatus('loading')
+        setStatusMessage('Sending message....')
+
+        try {
+            const response  = await fetch('http://localhost:3000/api/contact',{
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json',                
+                },
+                body: JSON.stringify(FormData)
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                setStatus('success')
+                setStatusMessage(data.msessage || 'message sent sucessfully!')
+                setFromData ({ name: '', email: '', message : ''});
+            }else {
+                setStatus('error')
+                setStatusMessage(data.message || 'Submisson failed. please try again.');
+            }
+        } catch (error) {
+            console.error('Frontend Fetch Error : ', error);
+            setStatus('error');
+            setStatusMessage('Network error. Is the server running?')
+        }
+    }
+
+    const getStatusStyles = () => {
+        switch (status) {
+            case 'success':
+                return 'text-green-500 font-semibold';
+            case 'error':
+                return 'text-red-500 font-semibold';
+            default: 
+                return 'text-gray-500';
+        }
+    }
+        
+
     return (
         <section 
             id="contact" 

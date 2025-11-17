@@ -6,7 +6,7 @@ import Skills from './Componets/Skills'
 import Certificates from './Componets/Certificates'
 import LetsConnect from './Componets/LetsConnect'
 import Footer from './Componets/Footer'
-
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -33,11 +33,9 @@ const App = () => {
     <div className={`${isdarkMode ? "dark" : ""} min-h-screen px-4 lg:px-12`}>
       <Navbar toggleDarkMode={toggleDarkMode} isdarkMode= {isdarkMode} />
         <main>
-          <Hero />
-          <AboutMe  />
-          <Skills  />
-          <Certificates />
-          <LetsConnect />
+          <Routes>
+
+          </Routes>
         </main>
       <Footer />      
     </div>
