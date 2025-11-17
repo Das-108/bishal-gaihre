@@ -34,8 +34,12 @@ const App = () => {
       <Navbar toggleDarkMode={toggleDarkMode} isdarkMode= {isdarkMode} />
         <main>
           <Routes>
-
-          </Routes>
+            <Route path='/' element = {<Hero />} />
+            <Route path='/' element = {<AboutMe />} />
+            <Route path='/' element = {<Skills />} />
+            <Route path='/' element = {<Certificates />} />            
+            <Route path='/contact' element = {<LetsConnect />} />            
+          </Routes>          
         </main>
       <Footer />      
     </div>
