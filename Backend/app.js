@@ -4,6 +4,15 @@ const app =express ()
 
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail', // or whatever service you are using
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
 const path = require('path');
 const fs = require('fs');
 
@@ -17,7 +26,7 @@ app.get('/', async(req, res) => {
     res.send('Portfoilo is listening')
 })
 
-app.get('/api/download-cv', async(req, res) => {
+app.get('/download-cv', async(req, res) => {
     const filePath = path.join(__cvDownload, 'public', 'Bishal_Gaihre_CV.pdf');
     
     if (fs.existsSync(filePath)) {
@@ -33,7 +42,7 @@ app.get('/api/download-cv', async(req, res) => {
     }
 });
 
-app.post('/api/conact', async (req,res)=> {
+app.post('/contact', async (req,res)=> {
     const { name, email, message } = req.body;
 
     if(!name|| !email || !message) {
@@ -41,7 +50,7 @@ app.post('/api/conact', async (req,res)=> {
     }
 
     const mailOptions = {
-        form : `"${name}" <${email}>`,
+        from : `"${name}" <${email}>`,
         to: process.env.EMAIL_USER,
         subject: `NEW PORTFOLIO MESSAGE from ${name}`,
         html : `
@@ -49,7 +58,7 @@ app.post('/api/conact', async (req,res)=> {
             <p> <strong>Name:</strong> ${name}</p>
             <p> <strong>Email:</strong> ${email}</p>
             <p> <strong>Message:</strong> ${name}</p>
-            <p style= "border:1px solid #ccc; padding 10px;"}>${message}</p>    `            
+            <p style= "border:1px solid #ccc; padding: 10px;">${message}</p>`
     }
 
     try {
@@ -57,7 +66,7 @@ app.post('/api/conact', async (req,res)=> {
         console.log(`Email sent from ${email}`);
         res.status(200).json({ message: 'Message sent Successfully'})
     } catch (error) {
-        console.error("Nodemon Error: " ,error);
+        console.error("Nodemailer Error: " ,error);
         res.status(500).json({message : 'Failed to send Message.'})
     }
 })

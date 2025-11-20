@@ -35,9 +35,9 @@ const App = () => {
         <main>
           <Routes>
             <Route path='/' element = {<Hero />} />
-            <Route path='/' element = {<AboutMe />} />
-            <Route path='/' element = {<Skills />} />
-            <Route path='/' element = {<Certificates />} />            
+            <Route path='/aboutme' element = {<AboutMe />} />
+            <Route path='/skills' element = {<Skills />} />
+            <Route path='/certificates' element = {<Certificates />} />            
             <Route path='/contact' element = {<LetsConnect />} />            
           </Routes>          
         </main>
