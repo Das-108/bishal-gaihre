@@ -1,39 +1,45 @@
 import React from 'react';
-import { RiSunFill, RiMoonFill } from 'react-icons/ri'; 
+import { RiSunFill, RiMoonFill } from 'react-icons/ri';
 
-// Note: Ensure your parent component passes toggleDarkMode and isDarkMode
 const Navbar = ({ toggleDarkMode, isDarkMode }) => {
+  const navItems = [
+    { label: 'Home', id: 'hero' },
+    { label: 'About', id: 'aboutme' },
+    { label: 'Skills', id: 'skills' },
+    { label: 'Certificates', id: 'certificates' },
+    { label: 'Contact', id: 'contact' },
+  ];
+
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <header 
-      // Use CSS variable for background and border colors
-      className='fixed top-0 w-full z-50 bg-(--bg-primary)/80 backdrop-blur-md border-b border-border transition-colors duration-300'
-    >
-      <div className='max-w-6xl mx-auto px-8 py-4 flex justify-between items-center'>
-        <div 
-          className='font-heading text-2xl font-semibold'
-          style={{ color: 'var(--text-default)' }} // Ensure heading uses default text color
-        >
+    <header className="fixed top-0 w-full z-50 bg-(--bg-primary)/80 backdrop-blur-md border-b border-border transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="font-heading text-2xl font-semibold" style={{ color: 'var(--text-default)' }}>
           Bishal Gaihre
         </div>
 
-        <nav className='hidden md:flex space-x-8 text-(--text-default)'>
-          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-            <a 
-              key={item}
-              href={`#${item.toLowerCase()}`} 
-              // Use the accent color variable for hover state
-              className='hover:text-accent transition-colors'
+        {/* Nav Links */}
+        <nav className="hidden md:flex space-x-8">
+          {navItems.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => handleScroll(id)}
+              className="text-(--text-default) hover:text-accent transition-colors"
             >
-              {item}
-            </a>
+              {label}
+            </button>
           ))}
         </nav>
 
-        {/* Dark Mode Toggle Button */}
+        {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className='text-2xl text-(--text-default) hover:text-accent transition-colors'
-          aria-label='Toggle dark mode'
+          className="text-2xl text-(--text-default) hover:text-accent transition-colors"
         >
           {isDarkMode ? <RiSunFill /> : <RiMoonFill />}
         </button>

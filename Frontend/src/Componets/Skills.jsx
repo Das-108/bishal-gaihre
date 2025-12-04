@@ -1,57 +1,65 @@
-import React from 'react';
-import { RiPaletteFill, RiCodeBoxFill, RiDatabase2Fill, RiToolsFill } from 'react-icons/ri'; // Example icons
+import React from 'react'
 
-const skillData = [
-    { title: 'Design', icon: RiPaletteFill, tools: 'Figma, Framer, Adobe XD' },
-    { title: 'Frontend', icon: RiCodeBoxFill, tools: 'React, Next.js, Tailwind CSS' },
-    { title: 'Backend', icon: RiDatabase2Fill, tools: 'Node.js, Express, MongoDB' },
-    { title: 'Tools', icon: RiToolsFill, tools: 'Git, VS Code, Postman' },
-];
+// Define data outside the component function (good practice)
+const skillsData = [
+    {
+        logo: 'ri-palette-line text-3xl',
+        title: 'Design',
+        tools: 'Figma, Framer, Adobe XD'
+    },
+    {
+        logo: 'ri-reactjs-fill text-3xl',
+        title: 'Frontend',
+        tools: 'React, Tailwind, Vite'
+    },
+    {
+        logo: 'ri-server-line text-3xl',
+        title: 'Backend',
+        tools: 'Node, Express, MongoDB'
+    },
+    {
+        logo: 'ri-tools-fill text-3xl',
+        title: 'Tools',
+        tools: 'Git, REST API, UI Libraries'
+    },
+]
 
-const SkillCard = ({ title, icon: Icon, tools }) => {
-    return (
-        <div 
-            className='skill-card p-6 rounded-xl shadow-lg hover:shadow-xl hover:glow transition-all group'
-            style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-default)' }}
-        >
-            <div className='text-center space-y-4'>
-                <div 
-                    className='w-16 h-16 mx-auto rounded-xl flex items-center justify-center transition-all'
-                    // Background: Soft accent / Hover: Solid accent
-                    style={{ backgroundColor: 'color-mix(in srgb, var(--color-accent) 10%, transparent)', color: 'var(--color-accent)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-accent)'; e.currentTarget.style.color = 'var(--bg-primary)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--color-accent) 10%, transparent)'; e.currentTarget.style.color = 'var(--color-accent)'; }}
-                >
-                    <Icon className='text-2xl' />
-                </div>
-                <h3 className='font-semibold text-xl'>{title}</h3>
-                <p className='text-gray-500'>{tools}</p>
-            </div>
+const Skills = ({ className }) => { // Use className prop for consistency
+  return (
+    <section className={`flex flex-col items-center max-w-7xl mx-auto ${className}`}>
+
+        <div className='m-4 text-center'>
+            <h2 className='font-heading text-4xl tracking-tight lg:text-5xl'>Skills & Expertise</h2>
+            <p className='font-body text-textC/70 mt-2  mb-4 text-lg'>Tools and technology I work with</p>        
         </div>
-    );
-};
 
-const Skills = () => {
-    return (
-        <section id="skills" className='py-24'>
-            <div className='max-w-6xl mx-auto px-8'>
-                <div className='text-center mb-16'>
-                    <h2 
-                      className='font-heading text-4xl font-medium mb-4'
-                      style={{ color: 'var(--text-default)' }}
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl'>
+
+            {skillsData.map((elem, index) => (
+
+                // 💡 STEP 1: Add the 'group' class to the main card container
+                <div 
+                    key={index} 
+                    className='bg-background rounded-xl p-6 flex flex-col items-center text-center shadow-md transition-all duration-300 ease-in-out group hover:shadow-soft-glow hover:-translate-y-1' // Added your desired card hover effects
+                >
+                    
+                    {/* 💡 STEP 2: Use group-hover:bg-accent and remove the 'text-accent' default */}
+                    <div 
+                        className='bg-accent/20 mb-4 rounded-xl w-16 h-16 flex items-center justify-center text-3xl transition-colors duration-300 group-hover:bg-accent'
                     >
-                      Skills &amp; Expertise
-                    </h2>
-                    <p className='text-xl text-gray-500'>Tools and technologies I work with</p>
-                </div>
-                <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-                    {skillData.map((skill) => (
-                        <SkillCard key={skill.title} {...skill} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
+                        {/* 💡 STEP 3: Use group-hover:text-white for the icon color */}
+                        <i 
+                            className={`${elem.logo} text-accent transition-colors duration-300  group-hover:text-white`} // Default color is accent, changes to white on group-hover
+                        ></i>
+                    </div>
 
-export default Skills;
+                    <h3 className='mb-1 font-bold text-lg font-body text-textC'>{elem.title}</h3>
+                    <p className='text-sm text-textC/80'>{elem.tools}</p>
+                </div> 
+            ))}
+        </div>
+    </section>
+  )
+}
+
+export default Skills

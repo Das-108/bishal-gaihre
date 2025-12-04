@@ -1,49 +1,58 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './Componets/Navbar'
-import Hero from './Componets/Hero'
-import AboutMe from './Componets/AboutMe'
-import Skills from './Componets/Skills'
-import Certificates from './Componets/Certificates'
-import LetsConnect from './Componets/LetsConnect'
-import Footer from './Componets/Footer'
-import { Routes, Route } from 'react-router-dom';
-
-
+import React, { useEffect, useState } from 'react';
+import Navbar from './Componets/Navbar';
+import Hero from './Componets/Hero';
+import AboutMe from './Componets/AboutMe';
+import Skills from './Componets/Skills';
+import Certificates from './Componets/Certificates';
+import Footer from './Componets/Footer';
+import Contact from './Componets/Contact';
 
 const App = () => {
-
-  const [isdarkMode, setisDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setisDarkMode((prevMode => !prevMode))    
-  }
+    setIsDarkMode(prev => !prev);
+  };
 
-  useEffect(()=> {
-    const body = document.body
-
-    if(isdarkMode) {
-      body.classList.add('dark')
-    }else{
-      body.classList.remove('dark')
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
     }
-  },[isdarkMode])
-
+  }, [isDarkMode]);
 
   return (
-    <div className={`${isdarkMode ? "dark" : ""} min-h-screen px-4 lg:px-12`}>
-      <Navbar toggleDarkMode={toggleDarkMode} isdarkMode= {isdarkMode} />
-        <main>
-          <Routes>
-            <Route path='/' element = {<Hero />} />
-            <Route path='/aboutme' element = {<AboutMe />} />
-            <Route path='/skills' element = {<Skills />} />
-            <Route path='/certificates' element = {<Certificates />} />            
-            <Route path='/contact' element = {<LetsConnect />} />            
-          </Routes>          
-        </main>
-      <Footer />      
-    </div>
-  )
-}
+    <div className={`${isDarkMode ? 'dark' : ''} min-h-screen`}>
+      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
 
-export default App
+      <main className="pt-24"> {/* offset for fixed navbar */}
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="aboutme">
+          <AboutMe />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="certificates">
+          <Certificates />
+        </section>
+
+        <section id='Contact'>
+          <Contact />
+        </section>
+
+        <section id="contact">
+          <Footer />
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default App;
