@@ -15,18 +15,23 @@ const certification = [
     cetificateImg: 'https://global.discourse-cdn.com/freecodecamp/optimized/3X/1/a/1a10b3336896b7939a35c42b4d18de70205f81ef_2_1024x669.png',
     title: 'JavaScript Algorithms & Data Structures',
     description: 'Certificate for mastering JS algorithms and data structure challenges on FreeCodeCamp.'
-  }
+  },
+  {
+    cetificateImg: 'https://global.discourse-cdn.com/freecodecamp/optimized/3X/1/a/1a10b3336896b7939a35c42b4d18de70205f81ef_2_1024x669.png',
+    title: 'JavaScript Algorithms & Data Structures',
+    description: 'Certificate for mastering JS algorithms and data structure challenges on FreeCodeCamp.'
+  },
 ];
 
 const Certificates = () => {
   return (
-    <section id="certificates" className='py-24 sm:py-28 lg:py-32'>
+    <section id="certificates" className='py-24 sm:py-28 lg:py-32 dark:bg-border'>
       <div className='text-center mb-8 sm:mb-12'>
         <h2 className='text-3xl sm:text-4xl lg:text-5xl font-medium text-(--text-default) mb-2'>
           Certificates
         </h2>
         <p className='text-lg sm:text-xl text-gray-500'>
-          Recent work that showcases my approach
+          Certifiactes awarded to me
         </p>
       </div>
 

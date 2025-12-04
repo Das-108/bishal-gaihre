@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Contact = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Message has been sent Successfully')
+  }
+
   return (
     <section 
       id="contact" 
@@ -22,7 +28,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <form className='space-y-6'>
+        <form className='space-y-6' onSubmit={handleSubmit}>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6'>
             <input 
               type="text" 
@@ -67,7 +73,7 @@ const Contact = () => {
               Send Message
             </button>
             <p className='mt-4 text-gray-500 text-sm sm:text-base'>
-              or reach me at <a href="mailto:hello@bishalgaihre.com" className='hover:underline text-accent'>hello@bishalgaihre.com</a>
+              or reach me at <a href="mailto:bishalgaihre4@gmail.com" className='hover:underline text-accent'>bishalgaihre4@gmail.com</a>
             </p>
           </div>
         </form>
