@@ -13,5 +13,5 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  base: '/portfolio/',
+  base: '/bishal-gaihre/',
 })
