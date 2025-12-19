@@ -9,8 +9,8 @@ const Footer = () => {
           Bishal Gaihre
         </div>
         <div className='flex gap-4'>
-          <a href="https://www.linkedin.com/in/bishal-gaihre-063243326/" className='text-gray-500 hover:text-accent transition-colors'><RiLinkedinFill size={24} /></a>
-          <a href="https://github.com/Das-108" className='text-gray-500 hover:text-accent transition-colors'><RiGithubFill size={24} /></a>
+          <a target='_blank' href="https://www.linkedin.com/in/bishal-gaihre-063243326/" className='text-gray-500 hover:text-accent transition-colors'><RiLinkedinFill size={24} /></a>
+          <a target='_blank' href="https://github.com/Das-108" className='text-gray-500 hover:text-accent transition-colors'><RiGithubFill size={24} /></a>
           
         </div>
       </div>

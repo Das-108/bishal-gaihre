@@ -83,12 +83,14 @@ const Hero = () => {
             
             
             {/* Button 2: Solid */}
-            <button
-              className='px-6 sm:px-8 py-3 sm:py-4 rounded-xl flex items-center gap-2 justify-center transition-all duration-300 hover:shadow-lg'
-              style={{ backgroundColor: 'var(--color-accent)', color: 'var(--bg-primary)' }}
-            >
-              Contact Me <RiArrowRightLine />
-            </button>
+            <a href="mailto:bishalgaihre4@gmail.com">
+              <button
+                className='px-6 sm:px-8 py-3 sm:py-4 rounded-xl flex items-center gap-2 justify-center transition-all duration-300 hover:shadow-lg'
+                style={{ backgroundColor: 'var(--color-accent)', color: 'var(--bg-primary)' }}
+              >
+                Contact Me <RiArrowRightLine />
+              </button>
+            </a>
           </div>
         </div>
       </div>
