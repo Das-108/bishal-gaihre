@@ -60,32 +60,30 @@ const Hero = () => {
           </p>
 
           {/* Buttons: Stacked on small, side-by-side on medium/large */}
-          <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start'>
+          <div className='flex flex-row gap-4 justify-center lg:justify-start items-center'>
             {/* Button 1: Outline */}
-            
-              <a 
-                href={CV}
-                download="Bishal-Gaihre-CV.pdf"
-              >
-                <button
-                className='px-6 sm:px-8 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 hover:bg-accent'              
+            <a 
+              href={CV}
+              download="Bishal-Gaihre-CV.pdf"
+            >
+              <button
+                className='px-4 sm:px-8 py-3 sm:py-4 border-2 rounded-xl transition-all duration-300 hover:bg-accent'              
                 style={{ 
                   borderColor: 'var(--color-accent)', 
                   color: 'var(--color-accent)',
-                  '--tw-text-hover': 'var(--bg-primary)' 
                 }}             
                 onMouseOver={e => e.currentTarget.style.color = 'var(--bg-primary)'}
                 onMouseOut={e => e.currentTarget.style.color = 'var(--color-accent)'}
               >
-                Download My CV
+                Download CV
               </button> 
             </a>
             
-            
             {/* Button 2: Solid */}
-            <a href="mailto:bishalgaihre4@gmail.com">
+            {/* Fixed the typo 'felx' to 'flex' and removed padding from the <a> tag to keep alignment clean */}
+            <a href="mailto:bishalgaihre4@gmail.com" className='flex items-center'>
               <button
-                className='px-6 sm:px-8 py-3 sm:py-4 rounded-xl flex items-center gap-2 justify-center transition-all duration-300 hover:shadow-lg'
+                className='px-4 sm:px-8 py-3 sm:py-4 rounded-xl flex items-center gap-2 justify-center transition-all duration-300 hover:shadow-lg'
                 style={{ backgroundColor: 'var(--color-accent)', color: 'var(--bg-primary)' }}
               >
                 Contact Me <RiArrowRightLine />

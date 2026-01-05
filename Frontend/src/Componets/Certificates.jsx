@@ -1,31 +1,22 @@
 import React from 'react';
-
+import jsCert from '../assets/jsCert.png'
+import pythonCert from '../assets/pythonCert.png'
 const certification = [
   {
-    cetificateImg: 'https://campus.w3schools.com/cdn/shop/files/certificate_of_completion_python_professional_995x786.jpg?v=1711022843',
+    cetificateImg: jsCert,
+    title: 'Basic javascript Certificate',
+    description: 'skills learnt Data Types, Debugging, Type Casting, Conditional Execution, Errors, Loops, Recursion, Operators, Control Flow, Functions, User Interaction, Exceptions, Comments, Variables'
+  },
+  {
+    cetificateImg: pythonCert,
     title: 'Python Certificate',
-    description: 'Completion certificate for Python Professional course demonstrating core programming skills.'
-  },
-  {
-    cetificateImg: 'https://cdn.educba.com/academy/wp-content/uploads/2022/07/JavaScript-Certification-Course-Certification.jpg',
-    title: 'Basic Javascript',
-    description: 'Certificate for foundational JavaScript skills including DOM manipulation and ES6.'
-  },
-  {
-    cetificateImg: 'https://global.discourse-cdn.com/freecodecamp/optimized/3X/1/a/1a10b3336896b7939a35c42b4d18de70205f81ef_2_1024x669.png',
-    title: 'JavaScript Algorithms & Data Structures',
-    description: 'Certificate for mastering JS algorithms and data structure challenges on FreeCodeCamp.'
-  },
-  {
-    cetificateImg: 'https://global.discourse-cdn.com/freecodecamp/optimized/3X/1/a/1a10b3336896b7939a35c42b4d18de70205f81ef_2_1024x669.png',
-    title: 'JavaScript Algorithms & Data Structures',
-    description: 'Certificate for mastering JS algorithms and data structure challenges on FreeCodeCamp.'
+    description: 'Skills learnt Computer Programming,Python,Algorithmic Thinking,Analytical Thinking,Basic Python Programming,Best Practices in Programming, Design, Develop, and Debug ScriptsEntry-level, Procedural Programming'
   },
 ];
 
 const Certificates = () => {
   return (
-    <section id="certificates" className='py-24 sm:py-28 lg:py-32 dark:bg-border'>
+    <section id="certificates" className='py-24 sm:py-28 lg:py-32 dark:bg-border ml-4 mr-4'>
       <div className='text-center mb-8 sm:mb-12'>
         <h2 className='text-3xl sm:text-4xl lg:text-5xl font-medium text-(--text-default) mb-2'>
           Certificates
@@ -35,9 +26,9 @@ const Certificates = () => {
         </p>
       </div>
 
-      <div className='flex gap-4 sm:gap-6 px-4 sm:px-8 overflow-x-auto scrollbar-hide'>
+      <div className='flex gap-4 sm:gap-6 px-4 sm:px-8 overflow-x-auto no-scrollbar'>
         {certification.map((cert, index) => (
-          <div key={index} className='bg-(--bg-secondary) dark:bg-(--bg-primary) p-4 sm:p-6 rounded-xl text-center w-[250px] sm:w-[300px] md:w-[380px] shadow shrink-0'>
+          <div key={index} className='bg-(--bg-secondary) dark:bg-(--bg-primary) p-4 sm:p-6 rounded-xl text-center w-62.5 sm:w-75 md:w-95 shadow shrink-0'>
             <div className='h-40 sm:h-48 mb-4'>
               <img 
                 src={cert.cetificateImg} 
