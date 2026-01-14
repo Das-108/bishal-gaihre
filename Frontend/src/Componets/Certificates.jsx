@@ -1,19 +1,26 @@
 import React from 'react';
 import jsCert from '../assets/jsCert.png'
 import pythonCert from '../assets/pythonCert.png'
+import responsiveDesignCert from '../assets/responsiveCert.png'
+
+
 const certification = [
   {
     cetificateImg: jsCert,
-    title: 'Basic javascript Certificate',
-    description: 'skills learnt Data Types, Debugging, Type Casting, Conditional Execution, Errors, Loops, Recursion, Operators, Control Flow, Functions, User Interaction, Exceptions, Comments, Variables'
+    title: 'Basic JavaScript Certificate',
+    description: 'Developed a strong foundation in core JavaScript including asynchronous programming, DOM manipulation, and modern ES6+ syntax. Mastered logic implementation through loops, recursion, and advanced functional programming concepts.'
   },
   {
     cetificateImg: pythonCert,
     title: 'Python Certificate',
-    description: 'Skills learnt Computer Programming,Python,Algorithmic Thinking,Analytical Thinking,Basic Python Programming,Best Practices in Programming, Design, Develop, and Debug ScriptsEntry-level, Procedural Programming'
+    description: 'Gained proficiency in Python fundamentals, focusing on algorithmic thinking and data structures. Experienced in writing clean, PEP 8 compliant code and developing scripts for automation and procedural programming.'
+  },
+  {
+    cetificateImg: responsiveDesignCert,
+    title: 'Responsive Web Design Certificate',
+    description: 'Mastered the art of building flexible, mobile-first web layouts using CSS Grid, Flexbox, and Media Queries. Focused on creating accessible, user-centric interfaces that adapt seamlessly across all device screen sizes.'
   },
 ];
-
 const Certificates = () => {
   return (
     <section id="certificates" className='py-24 sm:py-28 lg:py-32 dark:bg-border ml-4 mr-4'>

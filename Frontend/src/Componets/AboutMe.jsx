@@ -1,4 +1,5 @@
 import React from 'react'
+import pic2 from "../assets/pic2.png";
 
 const AboutMe = () => {
   return (
@@ -41,7 +42,7 @@ const AboutMe = () => {
         >
             <img 
                 className='rounded-xl w-full h-full object-cover shadow-soft-glow aspect-square'  
-                src="https://images.unsplash.com/photo-1665436035665-d7dad9086ee2?q=80&w=918&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src={pic2}
                 alt="A photo of the portfolio owner" 
             />
         </div>
