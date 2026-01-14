@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='text-center mt-8 pt-8 border-t border-border text-gray-500 text-sm sm:text-base'>
-        &copy; 2024 Bishal Gaihre. Crafted with mindfulness and purpose.
+        &copy; {new Date().getFullYear()} Bishal Gaihre. Crafted with mindfulness and purpose.
       </div>
     </footer>
   );
